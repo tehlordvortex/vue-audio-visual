@@ -86,6 +86,23 @@ const props = {
   canvFillColor: {
     type: [String, Array],
     default: null
+  },
+  enabled: {
+    type: Boolean,
+    default: true
+  }
+}
+
+const data = function () {
+  return {
+    nextAnimationFrame: null
+  }
+}
+
+const watch = {
+  enabled: function (newVal) {
+    if (newVal) this.mainLoop()
+    else cancelAnimationFrame(this.nextAnimationFrame)
   }
 }
 
@@ -157,7 +174,9 @@ export default {
   mounted () {
     this.createHTMLElements()
     this.setAnalyser()
-    this.mainLoop()
+    if (this.enabled) this.mainLoop()
   },
-  methods
+  methods,
+  data,
+  watch
 }

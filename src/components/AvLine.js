@@ -74,7 +74,7 @@ const AvLine = {
       this.ctx.lineTo(+this.canvWidth, this.canvHeight / 2)
       this.ctx.stroke()
 
-      requestAnimationFrame(this.mainLoop)
+      this.nextAnimationFrame = requestAnimationFrame(this.mainLoop)
     },
     /**
      * Canvas clear background fill

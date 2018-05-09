@@ -138,7 +138,7 @@ const AvBars = {
         this._drawBar(barWidth, barHeight, x)
         x += barWidth + this.barSpace
       })
-      requestAnimationFrame(this.mainLoop)
+      this.nextAnimationFrame = requestAnimationFrame(this.mainLoop)
     },
     /**
      * Canvas background fill

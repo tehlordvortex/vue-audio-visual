@@ -264,7 +264,7 @@ const AvCircle = {
         this.ctx.stroke()
       })
 
-      requestAnimationFrame(this.mainLoop)
+      this.nextAnimationFrame = requestAnimationFrame(this.mainLoop)
     },
     /**
      * Canvas clear background fill
