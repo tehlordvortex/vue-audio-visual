@@ -101,8 +101,12 @@ Prop **audio-src** value should contain URL to media file. Example:
 ```
 audio-src="http://example.com/media/song.mp3"
 ```
+You may also specify an **audio** prop which allows you to use an already existing audio element or an instance of `Audio`. Example:
+```
+:audio="$refs.audioElement"
+```
 
-Plugin will generate "audio" to control media playback and "canvas" element for visualization.
+Plugin will generate "audio" to control media playback (unless one is specified) and "canvas" element for visualization.
 
 There are props that are common for all components and special props for each component.
 
@@ -172,6 +176,15 @@ There are props that are common for all components and special props for each co
           <code>canv-fill-color="#00AAFF"</code><br/>
           <code>:canv-fill-color="['#FFF', 'rgb(0,255,127)', '#00f']"</code>
       </td>
+    </tr>
+    <tr>
+      <td>enabled</td>
+      <td><code>Boolean</code></td>
+      <td><code>true</code></td>
+      <td>Determines whether the main loop is running or not.
+      Examples: <br />
+      <code>:enabled="someComputedVariable"</code>
+      <code>:enabled="visible"</code>
     </tr>
   </tbody>
 </table>
